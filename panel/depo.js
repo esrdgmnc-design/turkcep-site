@@ -22,7 +22,8 @@ export async function oturum() {
 export async function girisBaglantisiGonder(eposta) {
   const { error } = await (await istemci()).auth.signInWithOtp({
     email: eposta,
-    options: { emailRedirectTo: location.origin + location.pathname, shouldCreateUser: false },
+    // İlk girişte hesap kendiliğinden açılır; ama içerik yalnızca editör listesindeki e-postalara görünür (RLS).
+    options: { emailRedirectTo: location.origin + location.pathname, shouldCreateUser: true },
   });
   if (error) throw error;
 }
