@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>TürkçeP öğretmen paneli</title>
+<style>
+:root{--zemin:#F4F2EC;--yuzey:#FFFFFF;--yazi:#1C1C1C;--ikincil:#5B5A55;--kenar:#DDD8CC;--sari:#F5C518;--sariKoyu:#8A6A00;--yesil:#2E6B4F;--yesilZ:#E6F2EC;--kiremit:#A6452C;--kiremitZ:#F6E7E1;--koyu:#141414}
+*{box-sizing:border-box}
+body{margin:0;background:var(--zemin);color:var(--yazi);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:1px solid var(--kenar);background:var(--yuzey);border-radius:10px;padding:8px 14px;min-height:40px}
+button.ana{background:var(--sari);border-color:var(--sari);font-weight:600;color:#141414}
+button.tehlike{color:var(--kiremit)}
+button:disabled{opacity:.45;cursor:not-allowed}
+input,select,textarea{width:100%;border:1px solid var(--kenar);border-radius:8px;padding:8px 10px;background:var(--yuzey)}
+textarea{min-height:64px;resize:vertical}
+label{display:block;font-size:13px;color:var(--ikincil);margin:10px 0 4px}
+header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 16px;background:var(--koyu);color:#F2F0EA}
+header img{height:34px}
+header .bosluk{flex:1}
+header button{background:transparent;color:#F2F0EA;border-color:#444}
+header button.ana{background:var(--sari);color:#141414}
+.sekme{display:flex;gap:4px}
+.sekme button.on{background:var(--sari);color:#141414;border-color:var(--sari)}
+.uyari{background:var(--kiremitZ);color:var(--kiremit);padding:8px 16px;font-size:14px}
+main{display:grid;grid-template-columns:260px minmax(0,1fr) 340px;gap:14px;padding:14px;align-items:start}
+@media(max-width:1100px){main{grid-template-columns:220px minmax(0,1fr)} #onizleme{grid-column:1/-1}}
+@media(max-width:720px){main{grid-template-columns:1fr}}
+.kutu{background:var(--yuzey);border:1px solid var(--kenar);border-radius:14px;padding:14px}
+#liste{display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 120px);overflow:auto}
+.oge{border:1px solid var(--kenar);border-radius:10px;padding:8px 10px;text-align:left;background:var(--yuzey);min-height:auto}
+.oge.secili{border:2px solid var(--sari)}
+.oge b{font-weight:600}
+.rozet{display:inline-block;font-size:11.5px;padding:1px 8px;border-radius:20px;margin-top:4px}
+.r-onay{background:var(--yesilZ);color:var(--yesil)}.r-taslak{background:#EEE;color:#555}.r-eksik{background:var(--kiremitZ);color:var(--kiremit)}.r-degisti{background:#FFF4CC;color:var(--sariKoyu)}
+h2{font-size:17px;margin:0 0 6px}
+h3{font-size:15px;margin:18px 0 4px;padding-top:12px;border-top:1px solid var(--kenar)}
+.iki{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:720px){.iki{grid-template-columns:1fr}}
+.sik{display:grid;grid-template-columns:34px 1fr;gap:8px;align-items:start;margin-top:8px}
+.sik .harf{display:flex;align-items:center;gap:4px;padding-top:8px;font-weight:600}
+.yanlisAcik{display:grid;grid-template-columns:1fr 200px;gap:6px;margin-top:4px}
+@media(max-width:720px){.yanlisAcik{grid-template-columns:1fr}}
+.sayac{font-size:12px;color:var(--ikincil);text-align:right}
+.sayac.asim{color:var(--kiremit);font-weight:600}
+#denetim li{color:var(--kiremit);font-size:14px}
+#durum{font-size:14px}
+.eylemler{display:flex;flex-wrap:wrap;gap:8px;position:sticky;bottom:0;background:var(--yuzey);padding:12px 0 2px;border-top:1px solid var(--kenar);margin-top:16px}
+.ipucu{font-size:12.5px;color:var(--ikincil)}
+/* telefon önizlemesi */
+.tel{background:#141414;color:#F2F0EA;border:6px solid #2A2A2A;border-radius:26px;padding:14px 12px;display:flex;flex-direction:column;gap:9px;font-size:13px;line-height:1.5;min-height:420px}
+.tel .m{color:#A8A49A;font-size:11.5px}
+.tel .serif{font-family:Georgia,"Source Serif 4",serif}
+.tel .hl{background:#F5C518;color:#141414;padding:0 4px;border-radius:3px}
+.tel .c{background:#1F1F1F;border:1px solid #2E2E2E;border-radius:12px;padding:9px}
+.tel .o{background:#1F1F1F;border:1px solid #333;border-radius:10px;padding:7px 9px}
+.tel .o.k{border-color:#7BC59A;background:#16261C}
+.tel u{text-decoration-color:#F5C518}
+.tel .metin{border-left:3px solid #F5C518;padding-left:9px}
+#giris{max-width:420px;margin:60px auto}
+</style>
+</head>
+<body>
+<div id="uygulama"></div>
+<script type="module" src="panel.js"></script>
+</body>
+</html>
